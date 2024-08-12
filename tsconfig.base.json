@@ -1,0 +1,75 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@common_types/*": [
+        "./packages/shared/common_types/src/*"
+      ],
+      "@helpers/*": [
+        "./packages/shared/helpers/src/*"
+      ],
+      "@icons/*": [
+        "./packages/shared/icons/src/*"
+      ],
+      "@pixi_canvas/*": [
+        "./packages/shared/pixi_canvas/src/*"
+      ],
+      "@ui/*": [
+        "./packages/shared/ui/src/*"
+      ],
+      "@perceptron_react/*": [
+        "./packages/apps/perceptron/perceptron_react/src/*"
+      ],
+      "@physical_ideas_react/*": [
+        "./packages/apps/physical_ideas/physical_ideas_react/src/*"
+      ],
+      "@moven_duty_react/*": [
+        "./packages/apps/moven_duty/moven_duty_react/src/*"
+      ],
+      "@spotify_react/*": [
+        "./packages/apps/spotify/spotify_react/src/*"
+      ],
+      "@boids_flock_react/*": [
+        "./packages/interactive_2d/boids_flock/boids_flock_react/src/*"
+      ],
+      "@portfolio_manager_react/*": [
+        "./packages/apps/portfolio_manager/portfolio_manager_react/src/*"
+      ],
+      "@portfolio_manager_tauri/*": [
+        "./packages/apps/portfolio_manager/portfolio_manager_tauri/src/*"
+      ],
+      "@chess_react/*": [
+        "./packages/interactive_2d/chess/chess_react/src/*"
+      ],
+      "@drawing_lines_react/*": [
+        "./packages/interactive_2d/drawing_lines/drawing_lines_react/src/*"
+      ],
+      "@mandelbrot_set_react/*": [
+        "./packages/interactive_3d/mandelbrot_set/mandelbrot_set_react/src/*"
+      ],
+      "@icons_react/*": [
+        "./packages/shared/icons/icons_react/src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

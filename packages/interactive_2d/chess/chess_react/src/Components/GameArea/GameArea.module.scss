@@ -1,0 +1,19 @@
+@use "../../Pages/IndexPage/variables" as *;
+
+$player-gap: 1.5rem;
+
+.gameArea {
+    margin-top: calc($player-gap / 2);
+    height: calc(100vh - $player-gap);
+    box-sizing: border-box;
+    margin-left: $spacing * 3;
+    gap: calc($player-gap / 2);
+
+    .pixiCanvasContainer {
+        min-height: calc(100vh - 13rem);
+        min-width: calc(100vh - 13rem);
+
+        @include with-radius();
+        position: relative;
+    }
+}

@@ -1,0 +1,75 @@
+@use "../../Pages/IndexPage/variables" as *;
+
+$extra-space: 6rem;
+$button-height: 2.6rem;
+$distance-btn-to-floor: 4rem;
+$drawer-container-height: calc(100vh - ($spacing * 2));
+
+$linear-gradient-percentage: (($button-height + $distance-btn-to-floor) * 100)
+    / ($button-height + $distance-btn-to-floor + $extra-space);
+    
+.drawerContainer {
+    position: relative;
+    z-index: 0;
+
+    top: $spacing;
+    left: $spacing;
+    bottom: $spacing;
+
+    padding: 2rem;
+    height: $drawer-container-height;
+    max-height: $drawer-container-height;
+    overflow-y: auto;
+    min-width: 350px;
+    max-width: 350px;
+    @include with-radius();
+
+    background-color: rgb(196 196 196 / 16%);
+
+    form {
+        z-index: 1;
+    }
+
+    h3 {
+        color: #cbcbcb;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    span {
+        color: #b2b2b2;
+        font-size: 18px;
+    }
+
+    .veil {
+        position: sticky;
+        left: 0;
+        right: 0;
+        bottom: -2rem;
+        height: $button-height + $distance-btn-to-floor + $extra-space;
+        min-height: $button-height + $distance-btn-to-floor + $extra-space;
+
+        background: rgb(73,71,68);
+        background: linear-gradient(0deg, rgba(73,71,68,1) $linear-gradient-percentage * 1%, rgba(255,255,255,0) 100%);
+
+        z-index: 3;
+    }
+
+    button.playGameBtn {
+        position: sticky;
+        z-index: 4;
+
+        left: 2rem;
+        right: 2rem;
+        bottom: 2rem;
+
+        @include with-radius();
+        cursor: pointer;
+
+        outline: none;
+        background-color: #7B61FF;
+        color: #fff;
+        border: none;
+        min-height: $button-height;
+    }
+}

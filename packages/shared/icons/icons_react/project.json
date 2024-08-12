@@ -1,0 +1,9 @@
+{
+  "name": "icons_react",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/shared/icons/icons_react/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project icons_react --web",
+  "targets": {}
+}

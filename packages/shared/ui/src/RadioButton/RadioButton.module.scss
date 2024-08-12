@@ -1,0 +1,50 @@
+.container {
+  border-width: 0.125em;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 1em;
+
+  width: 2.125em;
+  height: 1.25em;
+
+  transition: border-color 0.3s ease-in-out;
+
+  position: relative;
+
+  .btn {
+    position: absolute;
+    inset: 0;
+    border-radius: 1em;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    font-size: 16px;
+  }
+
+  .circle {
+    position: absolute;
+    left: 0.125em;
+    right: auto;
+
+    // Prevent selection
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    transform: translateY(-50%);
+    border-radius: 50%;
+
+    width: 0.75em;
+    height: 0.75em;
+
+    background-color: transparent;
+
+    transition: all 0.3s ease-in-out;
+
+    &.isOn {
+      left: 1em;
+    }
+  }
+}

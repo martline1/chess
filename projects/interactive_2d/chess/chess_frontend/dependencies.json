@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "projects/interactive_2d/chess/chess_frontend",
+        "packages/interactive_2d/chess/chess_react",
+        "packages/shared/icons/icons_react",
+        "packages/shared/pixi_canvas",
+        "packages/shared/helpers",
+        "packages/shared/ui",
+        "packages/shared/common_types"
+    ]
+}

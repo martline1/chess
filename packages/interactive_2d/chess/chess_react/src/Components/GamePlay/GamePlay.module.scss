@@ -1,0 +1,96 @@
+@use "./stockfish_button" as *;
+
+.engineDepthContainer {
+    height: 0;
+    transition: height 0.2s ease-in-out;
+
+    &.expanded {
+        height: 2.25rem !important;
+
+        .engineDepth {
+            opacity: 1;
+        }
+    }
+
+    .engineDepth {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        & > :first-child {
+            flex-grow: 1;
+        }
+    
+        input {
+            outline: none;
+            border-radius: 0.2rem;
+            color: #bcbcbc;
+            font-size: 1.2rem;
+            text-align: right;
+            padding: 0.3rem 0.6rem;
+            
+            width: 4.7rem;
+            background-color: transparent;
+            border: 2px solid transparent;
+    
+            transition: border 0.2s ease-in-out;
+    
+            &:hover, &:focus {
+                border: 2px solid #ffffff59;
+            }
+        }
+    }
+}
+
+.stockfishBtn {
+    padding-left: 0 !important;
+
+    &:hover {
+        padding-left: 0.5rem !important;
+    }
+}
+
+.playWithContainer {
+    button.togglePawn {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 0.1rem 0.4rem;
+        background-color: transparent;
+        border: 2px solid #ffffff59;
+        border-radius: 99rem;
+        min-width: 4.7rem;
+
+        transition: background-color 0.2s ease-in-out;
+
+        .pawnContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            margin-left: 0;
+            // private darkColor = 0x653b18;
+            // private whiteColor = 0xe3c79b;
+
+            border-radius: 99rem;
+
+            transition: margin-left 0.2s ease-in-out;
+            
+            .imageContainer {
+                position: relative;
+                overflow: hidden !important;
+
+                img {
+                    position: absolute;
+                    right: 0;
+        
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

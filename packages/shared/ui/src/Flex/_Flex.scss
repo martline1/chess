@@ -1,0 +1,56 @@
+// Include this file in your main/global scss file
+// @author @martline1 <yael.alcalla@gmail.com>
+
+$flex-properties: (
+  'direction': (
+    row,
+    column,
+    row-reverse,
+    column-reverse,
+  ),
+  'align': (
+    flex-start,
+    flex-end,
+    center,
+    baseline,
+    stretch,
+  ),
+  'justify': (
+    flex-start,
+    flex-end,
+    center,
+    space-between,
+    space-around,
+    space-evenly,
+  ),
+  'wrap': (
+    nowrap,
+    wrap,
+    wrap-reverse,
+  ),
+);
+
+// Map properties to classes
+@each $identifier, $values in $flex-properties {
+  @each $value in $values {
+    .shared-ui-flex-#{$identifier}-#{$value} {
+      @if $identifier == 'direction' {
+        flex-direction: $value !important;
+      } @else if $identifier == 'align' {
+        align-items: $value !important;
+      } @else if $identifier == 'justify' {
+        justify-content: $value !important;
+      } @else if $identifier == 'wrap' {
+        flex-wrap: $value !important;
+      }
+    }
+  }
+}
+
+.shared-ui-flex-display {
+  display: flex !important;
+}
+
+.shared-ui-flex-grow {
+  flex-grow: 1 !important;
+}

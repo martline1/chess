@@ -1,0 +1,11 @@
+.container {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    padding: 0.75rem 1rem;
+
+    &.selected {
+        color: var(--primary-color) !important;
+    }
+}

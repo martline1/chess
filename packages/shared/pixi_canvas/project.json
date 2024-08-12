@@ -1,0 +1,9 @@
+{
+  "name": "pixi_canvas",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/shared/pixi_canvas/pixi_canvas/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project pixi_canvas --web",
+  "targets": {}
+}

@@ -1,0 +1,14 @@
+[Event "abhishekbrahma vs martline1"]
+[Site "Chess.com"]
+[Date "2024-07-18"]
+[White "abhishekbrahma"]
+[Black "martline1"]
+[Result "1-0"]
+[WhiteElo "1341"]
+[BlackElo "1260"]
+[TimeControl "6000"]
+[Termination "abhishekbrahma won by checkmate"]
+1. e3 d5 2. Be2 e5 3. Nf3 e4 4. Nd4 Nf6 5. O-O Bd7 6. b3 Nc6 7. Nxc6 Bxc6 8. Ba3
+g6 9. Bxf8 Rxf8 10. c4 h5 11. cxd5 Qxd5 12. Nc3 Qe5 13. f4 exf3 14. Bxf3 Bxf3
+15. Qxf3 Ng4 16. g3 Rd8 17. Rad1 Ke7 18. d4 Qxe3+ 19. Kh1 Rfe8 20. Rde1 Qxe1 21.
+Rxe1+ Kf8 22. Rf1 Re3 23. Qxf7# 1-0

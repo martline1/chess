@@ -1,0 +1,44 @@
+$prefix: "shared-ui-scrollbar";
+
+.container {
+    position: relative;
+    overflow: hidden;
+
+    .child {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        overflow: auto;
+    }
+
+    .scrollbarContainer {
+        --#{$prefix}-color: #ffffff4d;
+        --#{$prefix}-color-hover: #ffffff80;
+        --#{$prefix}-color-active: #ffffffb3;
+    
+        position: absolute;
+        top: 0;
+        right: 20px;
+        bottom: 0;
+
+        z-index: calc(var(--content-level) + 10);
+
+        width: 1rem;
+        padding: 0.125rem;
+    
+        .track {
+            width: 100%;
+            height: 100%;
+    
+            background-color: blue;
+    
+            .handle {
+                position: absolute;
+                background-color: magenta;
+                width: inherit;
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+export { SettingsView as Settings } from "./Settings.view";

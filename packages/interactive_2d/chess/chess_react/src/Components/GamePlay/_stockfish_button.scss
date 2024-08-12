@@ -1,0 +1,33 @@
+.stockfishBtn {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+
+    outline: none;
+
+    filter: grayscale(100%);
+    transition: all 0.2s ease-in-out;
+
+    &.active {
+        filter: grayscale(0%);
+    }
+
+    &:hover {
+        border: 2px solid #ffffff59;
+    }
+
+    .info {
+        gap: 0.5rem;
+        margin-left: 1rem;
+
+        & > span:first-child {
+            font-size: 1.3rem;
+        }
+
+        & > span:last-child {
+            font-size: 0.9rem;
+        }
+    }
+}

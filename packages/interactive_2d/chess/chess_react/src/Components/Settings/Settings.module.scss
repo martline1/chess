@@ -1,0 +1,18 @@
+@use "../GamePlay/stockfish_button" as *;
+
+.stockfishBtn {
+    padding-left: calc(-0.5rem - 2px) !important;
+
+    &:hover {
+        padding-left: 0.5rem !important;
+    }
+
+    svg {
+        font-size: 1.8rem;
+        color: #b2b2b2;
+    }
+    
+    span {
+        font-size: 1.3rem !important;
+    }
+}
