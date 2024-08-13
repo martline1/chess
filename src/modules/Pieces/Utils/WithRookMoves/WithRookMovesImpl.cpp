@@ -24,7 +24,7 @@ class WithRookMoves::WithRookMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column, row - i);
                     }
                 )
@@ -35,7 +35,7 @@ class WithRookMoves::WithRookMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column, row + i);
                     }
                 )
@@ -47,7 +47,7 @@ class WithRookMoves::WithRookMovesImpl {
                     // Enable castle if:
                     !disableCastle && InstanceOf::check<Rook>(this),
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column - i, row);
                     }
                 )
@@ -59,7 +59,7 @@ class WithRookMoves::WithRookMovesImpl {
                     // Enable castle if:
                     !disableCastle && InstanceOf::check<Rook>(this),
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column + i, row);
                     }
                 )

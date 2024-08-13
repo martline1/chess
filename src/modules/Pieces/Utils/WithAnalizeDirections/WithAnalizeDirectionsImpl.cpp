@@ -42,6 +42,7 @@ class WithAnalizeDirections::WithAnalizeDirectionsImpl {
 
             for (int index = 1; index < 8; index++) {
                 for (std::pair<string, StateContent> entry: *state) {
+                    string _ = entry.first;
                     StateContent* stateContent = &entry.second;
 
                     if (!stateContent->shouldContinue) continue;
@@ -59,38 +60,42 @@ class WithAnalizeDirections::WithAnalizeDirectionsImpl {
                         continue;
                     }
 
-                    // Handle castle (Rook's perspective)
-                    if (stateContent->enableCastle) {
-                        GetValidPieceResponse kingResponse = gameState->gameStateImpl->getValidPiece(
-                            4,
-                            this->father->getCorrespondingRow()
-                        );
+                    // If we found a piece
+                    if (response.piece != nullptr) {
+                        // Handle castle (Rook's perspective)
+                        if (stateContent->enableCastle) {
+                            GetValidPieceResponse kingResponse = gameState->gameStateImpl->getValidPiece(
+                                4,
+                                this->father->getCorrespondingRow()
+                            );
 
-                        bool canCastle =
-                            !kingResponse.isOutOfScope
-                            && InstanceOf::check<King>(kingResponse.piece)
-                            && !static_cast<King*>(kingResponse.piece)->getHasMoved()
-                            && InstanceOf::check<Rook>(this)
-                            && !this->father->getHasMoved()
-                            && !this->father->isTreatened()
-                            && !static_cast<King*>(kingResponse.piece)->isTreatened();
-                        
-                        if (canCastle) {
-                            possibleMoves.push_back(nextPosition);
-                            stateContent->shouldContinue = false;
+                            bool canCastle =
+                                !kingResponse.isOutOfScope
+                                && InstanceOf::check<King>(kingResponse.piece)
+                                && !static_cast<King*>(kingResponse.piece)->getHasMoved()
+                                && InstanceOf::check<Rook>(this)
+                                && !this->father->getHasMoved()
+                                && !this->father->isTreatened()
+                                && !static_cast<King*>(kingResponse.piece)->isTreatened();
+                            
+                            if (canCastle) {
+                                possibleMoves.push_back(nextPosition);
+                                stateContent->shouldContinue = false;
 
-                            continue;
+                                continue;
+                            }
                         }
+
+                        stateContent->shouldContinue = false;
+
+                        // Handle regular piece
+                        if (response.piece->pieceImpl->getColor() != this->father->pieceImpl->getColor()) {
+                            std::cout << "added piece to eat!" << std::endl;
+                            possibleMoves.push_back(nextPosition);
+                        }
+
+                        continue;
                     }
-
-                    stateContent->shouldContinue = false;
-
-                    // Handle regular piece
-                    if (response.piece->pieceImpl->getColor() != this->father->pieceImpl->getColor()) {
-                        possibleMoves.push_back(nextPosition);
-                    }
-
-                    continue;
 
                     possibleMoves.push_back(nextPosition);
                 }

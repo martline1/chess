@@ -2,6 +2,8 @@
 
 #include "Bishop.h"
 
+#include <iostream>
+
 Bishop::Bishop(PieceParams* params):
     WithBishopMoves(),
     WithAnalizeDirections(params)

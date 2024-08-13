@@ -17,6 +17,6 @@ class PossibleMove {
         PossibleMove(PossibleMoveParams*);
 
         void render();
-        void onPointerDown(int, int);
+        bool onPointerDown(int, int);
         bool isBeingHovered(int, int);
 };

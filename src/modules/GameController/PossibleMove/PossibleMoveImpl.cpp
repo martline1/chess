@@ -77,9 +77,9 @@ void PossibleMove::render() {
     boardBuilder->drawRect(&params);
 }
 
-void PossibleMove::onPointerDown(int x, int y) {
+bool PossibleMove::onPointerDown(int x, int y) {
     // Only react if it's being hovered (clicking the possible move)
-    if (!this->isBeingHovered(x, y)) return;
+    if (!this->isBeingHovered(x, y)) return false;
 
     RawPosition* rawPosition = this->possibleMoveImpl->getRawPosition();
 
@@ -87,6 +87,8 @@ void PossibleMove::onPointerDown(int x, int y) {
         rawPosition->getColumn(),
         rawPosition->getRow()
     );
+
+    return true;
 }
 
 bool PossibleMove::isBeingHovered(int x, int y) {

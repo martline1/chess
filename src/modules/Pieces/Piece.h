@@ -33,4 +33,6 @@ class Piece {
         virtual void updatePosition(T*);
         virtual void onMoveEnd(int, int);
         virtual vector<T> getPossibleMoves() = 0;
+
+        virtual ~Piece() = default;
 };

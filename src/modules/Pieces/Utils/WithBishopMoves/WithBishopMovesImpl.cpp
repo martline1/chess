@@ -21,7 +21,7 @@ class WithBishopMoves::WithBishopMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column + i, row + i);
                     }
                 )
@@ -32,7 +32,7 @@ class WithBishopMoves::WithBishopMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column - i, row - i);
                     }
                 )
@@ -43,7 +43,7 @@ class WithBishopMoves::WithBishopMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column + i, row - i);
                     }
                 )
@@ -54,7 +54,7 @@ class WithBishopMoves::WithBishopMovesImpl {
                 StateContent(
                     false,
                     true,
-                    [&](int i) -> RawPosition {
+                    [=](int i) -> RawPosition {
                         return RawPosition(column - i, row + i);
                     }
                 )

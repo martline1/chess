@@ -219,34 +219,4 @@ void GameController::onPieceMoved() {
 
     this->gameControllerImpl->setPawnToIgnore(nullptr);
     this->gameControllerImpl->setSelectedPiece(nullptr);
-
-    // Print the contents of board in cout
-    unique_ptr<GameState>& gameState = this->gameControllerImpl->getGameState();
-
-    for (int row = 0; row < 8; row++) {
-        for (int column = 0; column < 8; column++) {
-            GetValidPieceResponse response = gameState->gameStateImpl->getValidPiece(column, row);
-
-            if (response.piece == nullptr) {
-                std::cout << "_____, ";
-                continue;
-            }
-
-            if (InstanceOf::check<Pawn>(response.piece)) {
-                std::cout << "Pawn, ";
-            } else if (InstanceOf::check<Bishop>(response.piece)) {
-                std::cout << "Bishop, ";
-            } else if (InstanceOf::check<Knight>(response.piece)) {
-                std::cout << "Knight, ";
-            } else if (InstanceOf::check<Rook>(response.piece)) {
-                std::cout << "Rook, ";
-            } else if (InstanceOf::check<Queen>(response.piece)) {
-                std::cout << "Queen, ";
-            } else if (InstanceOf::check<King>(response.piece)) {
-                std::cout << "King, ";
-            }
-        }
-
-        std::cout << std::endl;
-    }
 }

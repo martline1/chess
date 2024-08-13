@@ -75,6 +75,12 @@ class PiecesLoader::PiecesLoaderImpl {
         void setConfig(Config* config) {
             this->config = config;
         }
+
+        ~PiecesLoaderImpl() {
+            for (Piece<RawPosition>* piece: this->piecePtrs) {
+                delete piece;
+            }
+        }
 };
 
 PiecesLoader::PiecesLoader():

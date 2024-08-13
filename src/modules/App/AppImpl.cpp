@@ -204,8 +204,8 @@ void App::handlePointerEvents(bool& mouseButtonDown) {
     }
 
     vector<PossibleMove*>* possibleMoves =
-        this->appImpl->getGameController()->gameControllerImpl->getPossibleMoves();
-    
+        this->appImpl->getGameController()->gameControllerImpl->getPossibleMoves();    
+
     for (PossibleMove* possibleMove: *possibleMoves) {
         bool isBeingHovered = possibleMove->isBeingHovered(mouseX, mouseY);
 
@@ -214,7 +214,9 @@ void App::handlePointerEvents(bool& mouseButtonDown) {
         }
 
         if (mouseButtonDown) {
-            possibleMove->onPointerDown(mouseX, mouseY);
+            bool shouldStop = possibleMove->onPointerDown(mouseX, mouseY);
+
+            if (shouldStop) break;
         }
     }
 

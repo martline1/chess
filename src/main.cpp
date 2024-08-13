@@ -1,3 +1,32 @@
+#include "modules/Stockfish/Stockfish.cpp"
+#include "modules/Pieces/Utils/Position/Position.cpp"
+#include "modules/Common/Config/Config.cpp"
+#include "modules/Pieces/Utils/RawPosition/RawPosition.cpp"
+#include "modules/Common/GameState/GameStateImpl.cpp"
+#include "modules/Common/Collision/CollisionImpl.cpp"
+#include "modules/GameController/PossibleMove/PossibleMoveParams/PossibleMoveParams.cpp"
+#include "modules/GameController/GameControllerImpl.cpp"
+#include "modules/Pieces/PieceImpl.cpp"
+#include "modules/Board/BoardBuilder/DrawRectParams/DrawRectParams.cpp"
+#include "modules/GameController/PossibleMove/PossibleMoveImpl.cpp"
+#include "modules/PiecesLoader/PiecesLoaderImpl.cpp"
+#include "modules/Board/BoardBuilder/BoardBuilderImpl.cpp"
+#include "modules/Common/InstanceOf/InstanceOf.cpp"
+#include "modules/Board/BoardImpl.cpp"
+#include "modules/App/AppImpl.cpp"
+#include "modules/Pieces/Utils/StateController/StateController.cpp"
+#include "modules/Pieces/Utils/WithAnalizeDirections/WithAnalizeDirectionsImpl.cpp"
+#include "modules/Pieces/Utils/WithBishopMoves/WithBishopMovesImpl.cpp"
+#include "modules/Pieces/Utils/WithRookMoves/WithRookMovesImpl.cpp"
+#include "modules/Pieces/Utils/CastlePiece/CastlePiece.cpp"
+#include "modules/Pieces/Utils/HasMoved/HasMoved.cpp"
+#include "modules/Pieces/Kinds/Pawn/Pawn.cpp"
+#include "modules/Pieces/Kinds/Knight/Knight.cpp"
+#include "modules/Pieces/Kinds/Bishop/Bishop.cpp"
+#include "modules/Pieces/Kinds/Queen/Queen.cpp"
+#include "modules/Pieces/Kinds/Rook/Rook.cpp"
+#include "modules/Pieces/Kinds/King/King.cpp"
+
 #include <SDL.h>
 #include <thread>
 #include <vector>
@@ -5,26 +34,10 @@
 #include <iostream>
 #include <functional>
 
-#include <chrono>
-#include <stdlib.h>
-
-#include "deps.cpp"
-
 using std::string;
 using std::vector;
 
-void setTimeOut(int ms, std::function<void()> callback) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
-
-    callback();
-}
-
 int main() {
-    std::thread timeOutThread(setTimeOut, 5000, []() -> void {
-        system("CLS");
-        system("clear");
-    });
-
     const int SCREEN_WIDTH  = 800;
     const int SCREEN_HEIGHT = 800;
 
@@ -65,7 +78,6 @@ int main() {
     stockfish.setRunning(false);
 
     stockfishThread.join();
-    timeOutThread.join();
 
 	return 0;
 }
